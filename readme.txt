@@ -1,3 +1,3 @@
 Armando hérnandez Navarro
-3173403437
+317340347
 arhernav@ciencias.unam.mx
