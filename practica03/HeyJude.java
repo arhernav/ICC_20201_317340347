@@ -28,43 +28,74 @@ public class HeyJude{
 	                            + "The movement you need is on your shoulder.";
 
     public static void main(String[] args){
-	
 	int p = 1;//Numero de parrafos
-	while(p<=12){
-	    //Parrafos 1 y 2
-	    switch(p){
-	    case 1: System.out.println(HEY+DON+MAK);
-		break;
-	    case 2: System.out.println(HEY+DON+BEA);
-		break;
-	    case 4: System.out.println(HEY+DON+LET);
-	    }
-	    switch(p){
-             	case 1: System.out.println(TAK);
-	            break;
-	        case 2: System.out.println(YOW);
-		    break;
-	    default: System.out.println(YOH);
-		break;
-	    }
-	    if(p==2){
-		System.out.println(REM+LES);
-		System.out.println(THE+BEG+TOM);
-	    }else{
+	while(p<=9){
+	    if(p==1||p==2||p==4||p==6){
+		switch(p){
+		    case 1:
+		System.out.println(HEY+DON+MAK);
+		System.out.println(TAK);
 		System.out.println(REM+LEH);
 		System.out.println(THE+CAN+TOM);
-		}
-	    p++;
-	    //Parrafos 3 y 5
-	    switch(p){
-		case 3: System.out.println(AND);
-		    break;
-	    case 5: System.out.println(SOL);
+		System.out.println("\n");
+		p++;
 		break;
-	    }
+		    case 2:
+		System.out.println(HEY+DON+BEA);
+		System.out.println(YOW);
+		System.out.println(REM+LES);
+		System.out.println(THE+BEG+TOM);
+		System.out.println("\n");
+		p++;
+		break;    
+	            case 4:
+		System.out.println(HEY+DON+LET);
+		System.out.println(YOH);
+		System.out.println(REM+LEH);
+		System.out.println(THE+CAN+TOM);
+		System.out.println("\n");
+		p++;
+		break;
+		    default:
+		System.out.println(HEY+DON+MAK);
+		System.out.println(TAK);
+		System.out.println(REM+LES);
+		System.out.println(THE+CAN+TOM);
+		System.out.println("\n");
+		p++;
+		break;
+		}
+	    }else{
+		switch(p){
+		case 3:
+		System.out.println(AND);
+		System.out.println(NA+NA+NA+NA+NA);
+		System.out.println(NA+NA+NA+NA);
+		System.out.println("\n");
+		p++;
+		break;
+		case 5:
+		System.out.println(SOL);
+		System.out.println("\n");
+		p++;
+		break;
+		default:
+		    for(int n=1; n<=3; n++){
+		System.out.println(NA+NA+NA);
+		System.out.println(NA+NA+NA+NA);
+		System.out.println(NA+NA+NA+NA);
+		System.out.println(HEY);
+		System.out.println("\n");
+		p++;
+		    }
+		break;		
 
-	}
-	
+		}
+	    }
+        
+	}   
+    }
+}
 	/*
 1
 Hey Jude, don't make it bad
@@ -150,5 +181,3 @@ Na, na, na, na-na-na na
 Na-na-na na, hey Jude
 Na, na, na, na-na-na na
 Na-na-na na, hey Jude */
-    }   
-}
