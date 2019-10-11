@@ -1,9 +1,18 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ *Clase que contiene metodos aplicables a arreglos
+ *@author Armando Hernández
+ *
+ */
+
 public class Control{
 
-    
+    /**
+     *Te permite saber si la palabra recibida es un palindromo o no
+     *@param Palabra. recibe una paabra
+     */
     public static boolean problema1(String palabra){
 	String inversa = "";
 	for (int i = palabra.length()-1; i>=0; i--){
