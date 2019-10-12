@@ -116,9 +116,19 @@ public class Control{
     /**
      *Recibe un numero N y regresa una liste con todos los numeros primos menores a N
      */
-    //public static int[] problema6(int n){
-	
-    //}
+    public static int[] problema6(int n){
+	ArrayList<Integer> primos = new ArrayList<Integer>();
+	for(int i = 0; i<n; i++){
+	    if(problema5(i) == true){
+		primos.add(i);
+	    }
+	}
+	int [] arPrimos = new int[primos.size()];
+	for(int j =0; j < arPrimos.length;j++){
+	    arPrimos[j] = primos.get(j);
+	}
+	return arPrimos;
+    }
 
 
     public static void main(String[] args) {
@@ -132,7 +142,7 @@ public class Control{
         if(Arrays.equals(desordenado,ordenado) == true)resultado+="P3 bien\n";else resultado+="P3 mal\n";
         if(problema4(desordenado,2)== true && problema4(desordenado,18)== false)resultado+="P4 bien\n";else resultado+="P4 mal\n";
         if(problema5(7)==true && problema5(6)==false)resultado+="P5 bien\n";else resultado+="P5 mal\n";
-        //if(Arrays.equals(problema6(10), primos10) == true)resultado+="P6 bien\n";else resultado+="P6 mal\n";
+        if(Arrays.equals(problema6(10), primos10) == true)resultado+="P6 bien\n";else resultado+="P6 mal\n";
         System.out.println(resultado);   
     }
 
