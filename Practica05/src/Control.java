@@ -80,7 +80,22 @@ public class Control{
      *@return Regresa true si el numero recibido se encuentra en el arreglo ordenado
      */
     public static boolean problema4(int[] arreglo, int buscando){
-        return true;
+	int medio;
+	int maximo = arreglo.length -1;
+	int minimo = 0;
+	while(minimo <= maximo){
+	    medio = (maximo + minimo)/2;
+	    if(arreglo[medio] == buscando){
+		return true;
+	    }else{
+		if(buscando < arreglo[medio]){
+		    maximo = medio - 1;
+		}else{
+		    minimo = medio + 1;
+		}
+	    }
+	}
+        return false; 
     }
 
     /**
