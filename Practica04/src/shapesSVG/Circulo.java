@@ -1,12 +1,11 @@
 package shapesSVG;
-
 /**
  *@author: Armando Hernández Navarro
  *@version:1.0
  *@date: 23 de sep del 2019
  */
 
-public class Circulo{
+public class Circulo extends shapesSVG.Shape{
     /**
      *Parametros
      *@centro: Vector donde se ubica el centro del circulo
@@ -46,7 +45,7 @@ public class Circulo{
 	this.centro = new Vector2(x, y);
 	this.radio = radio;
         this.perimetro = this.radio * (2 * 3.1416);
-	this.area = Math.pow(this.radio, 2) * 3.1416;	
+	this.area = Math.pow(this.radio, 2) * 3.1416;
     }
     public Circulo(){
 	this.centro = new Vector2();
@@ -80,7 +79,7 @@ public class Circulo{
 
     //toString, toSVG, equals
     public String toSVG(){
-	return "<svg height='150' width='150'>" + "\n" + "<circle cx='" + this.centro.getX() + "' " + "cy='" + this.centro.getY() + "' " + "r='" + this.radio +"' " + "stroke='black' stroke-width='3' fill='red' />" + "\n" + "</svg>"; 
+	return "<svg height='150' width='150'>" + "\n" + "<circle cx='" + this.centro.getX() + "' " + "cy='" + this.centro.getY() + "' " + "r='" + this.radio +"' " + "stroke='black' stroke-width='3' fill='red' />" + "\n" + "</svg>";
     }
     public String toString(){
 	return "Circulo con centro en (" + this.centro.getX() + ", " + this.centro.getY() + ") y radio de: " + this.radio + "\n" + "Area=" + getArea() + "\n" + "Perimetro= " + getPerimetro();
@@ -90,8 +89,21 @@ public class Circulo{
 	    return true;
 	}else{
 	    return false;
-	}
+    }
     }
 
+    @Override
+    public int compareTo(Object o){
+      if(!(o instanceof Circulo)) {return 0;}
 
+      Circulo comp = (Circulo) o;
+      if(!(this.getArea()== comp.getArea())){
+        if(this.getArea()< comp.getArea()){
+          return -1;
+        }else{
+          return 1;
+        }
+      }
+      return 0;
+    }
 }

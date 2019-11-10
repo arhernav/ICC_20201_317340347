@@ -5,7 +5,7 @@ package shapesSVG;
  *@author: Armando Hernández Navarro
  *
  */
-public class Triangulo{
+public class Triangulo extends shapesSVG.Shape{
 
     /**
      *Atributos
@@ -22,7 +22,7 @@ public class Triangulo{
     private double area;
     private double semiperimetro;
 
-    
+
     /**
      *Metodos
      *
@@ -32,9 +32,9 @@ public class Triangulo{
 	this.b = b;
 	this.c = c;
 	this.perimetro = this.a.distancia(b) + this.b.distancia(c) + this.c.distancia(a);
-	
+
 	this.semiperimetro = (this.a.distancia(b) + this.b.distancia(c) + this.c.distancia(a)) / 2 ;
-	
+
 	this.area = Math.sqrt(this.semiperimetro * (this.semiperimetro - this.a.distancia(this.b)) * (this.semiperimetro - this.b.distancia(this.c)) * (this.semiperimetro - this.c.distancia(this.a)));
     }
     public Triangulo(double x1, double y1, double x2, double y2, double x3, double y3 ){
@@ -53,8 +53,8 @@ public class Triangulo{
 	this.semiperimetro = (this.a.distancia(b) + this.b.distancia(c) + this.c.distancia(a)) / 2 ;
 	this.area = Math.sqrt(this.semiperimetro * (this.semiperimetro - this.a.distancia(this.b)) * (this.semiperimetro - this.b.distancia(this.c)) * (this.semiperimetro - this.c.distancia(this.a)));
     }
-    
-    
+
+
 
 
     /**
@@ -108,10 +108,21 @@ public class Triangulo{
 	    return false;
 	}
     }
+    @Override
+    public int compareTo(Object o){
+      if(!(o instanceof Triangulo)){return 0;}
 
-    
+      Triangulo comp = (Triangulo) o;
+      if(!(this.getArea() == comp.getArea())){
+        if(this.getArea()< comp.getArea()){
+          return -1;
+        }else{
+          return 1;
+        }
+      }
+      return 0;
+    }
+
+
 
 }
-
-
-

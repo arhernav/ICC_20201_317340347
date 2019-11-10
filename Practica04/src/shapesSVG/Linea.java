@@ -1,6 +1,6 @@
 package shapesSVG;
 
-public class Linea{
+public class Linea extends shapesSVG.Shape{
 
     /**
      *Atributos
@@ -12,7 +12,7 @@ public class Linea{
     private Vector2 puntoL2;
     private double longitud;
 
-    
+
     /**
      *Metodos
      *@Linea(Vector1, Vector2): Recibe dos vectores y crea una linea a partir de ellos
@@ -35,7 +35,7 @@ public class Linea{
 	this.puntoL2 = new Vector2();
 	this.longitud = this.puntoL2.distancia(this.puntoL1);
     }
-    
+
     public Linea(double x1, double y1, double x2, double y2){
 	this.puntoL1 = new Vector2(x1, y1);
 	this.puntoL2 = new Vector2(x2, y2);
@@ -46,16 +46,16 @@ public class Linea{
 	this.puntoL1.setX(x1);
 	this.puntoL1.setY(y1);
     }
-    
+
     public void setPunto2(double x2, double y2){
 	this.puntoL2.setX(x2);
 	this.puntoL2.setY(y2);
     }
-    
+
     public Vector2 getPunto1(){
 	return this.puntoL1;
     }
-    
+
     public Vector2 getPunto2(){
 	return this.puntoL2;
     }
@@ -75,11 +75,26 @@ public class Linea{
     public String toSVG(){
 	return "<svg height='150mm' width='150mm'>" + "\n" + "<line x1='" + puntoL1.getX() + "mm' " + "y1='" + puntoL1.getY() + "mm' " + "x2='" + puntoL2.getX() +"mm' " + "y2='" + puntoL2.getY() + "mm' " + "style='stroke:#000; stroke-width:1mm' />" + "\n" + "</svg>";
     }
-    
+
 
     public String toString(){
 	return "Punto 1: " + this.puntoL1.getX() + " " + this.puntoL1.getY() + " Punto 2: " + this.puntoL2.getX() + " " + this.puntoL2.getY() + " Longitud: " + getLongitud();
     }
-    
+
+    @Override
+    public int compareTo(Object o){
+      if(!(o instanceof Linea)){return 0;}
+
+      Linea comp = (Linea) o;
+      if(!(this.getLongitud() == comp.getLongitud())){
+        if(this.getLongitud()< comp.getLongitud()){
+          return -1;
+        }else{
+          return 1;
+        }
+      }
+      return 0;
+    }
+
 
 }
