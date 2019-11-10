@@ -4,7 +4,7 @@ package shapesSVG;
 *@param: Crea un rectangulo a partoer de un punto
 *@date: 22 de sep del 2019
 */
-public class Rectangulo{
+public class Rectangulo extends shapesSVG.Shape{
     /**
      *Parametros
      *@a: Vector a partir del cual se crea el rectangulo
@@ -99,6 +99,20 @@ public class Rectangulo{
 	}else{
 	    return false;
 	}
+    }
+    @Override
+    public int compareTo(Object o){
+      if(!(o instanceof Rectangulo)){return 0;}
+
+      Rectangulo comp = (Rectangulo) o;
+      if(!(this.getArea()== comp.getArea())){
+        if(this.getArea()< comp.getArea()){
+          return -1;
+        }else{
+          return 1;
+        }
+      }
+      return 0;
     }
 
 
