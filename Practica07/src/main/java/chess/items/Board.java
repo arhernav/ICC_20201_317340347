@@ -4,6 +4,9 @@ import chess.pieces.Piece;
 import chess.pieces.chessPieces.Empty;
 import chess.pieces.chessPieces.Rook;
 import chess.pieces.chessPieces.Queen;
+import chess.pieces.chessPieces.Bishop;
+import chess.pieces.chessPieces.Pawn;
+
 /**
  *Class that models a chess board
  *@author:ICC 2020-2
@@ -27,8 +30,18 @@ public class Board{
             }
         }
         this.matrix[0][0] = new Rook(new Position(0, 0), ColorEnum.BLACK);
-        this.matrix[0][7] = new Rook(new Position(0, 7), ColorEnum.BLACK);
-	this.matrix[4][4] = new Queen(new Position(4, 4), ColorEnum.BLACK);
+	this.matrix[2][0] = new Bishop(new Position(2, 0), ColorEnum.BLACK);
+	this.matrix[4][0] = new Queen(new Position(4, 0), ColorEnum.BLACK);
+	this.matrix[5][0] = new Bishop(new Position(5, 0), ColorEnum.BLACK);
+        this.matrix[7][0] = new Rook(new Position(7, 0), ColorEnum.BLACK);
+	this.matrix[0][1] = new Pawn(new Position(0, 1), ColorEnum.WHITE);
+	this.matrix[1][1] = new Pawn(new Position(1, 1), ColorEnum.WHITE);
+	this.matrix[2][1] = new Pawn(new Position(2, 1), ColorEnum.WHITE);
+	this.matrix[3][1] = new Pawn(new Position(3, 1), ColorEnum.WHITE);
+	this.matrix[4][1] = new Pawn(new Position(4, 1), ColorEnum.WHITE);
+	this.matrix[5][1] = new Pawn(new Position(5, 1), ColorEnum.WHITE);
+	this.matrix[6][1] = new Pawn(new Position(6, 1), ColorEnum.WHITE);
+	this.matrix[7][1] = new Pawn(new Position(7, 1), ColorEnum.WHITE);
     }
 
     /**

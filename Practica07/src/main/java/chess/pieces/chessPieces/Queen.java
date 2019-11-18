@@ -6,6 +6,10 @@ import chess.items.Position;
 import chess.pieces.ColorEnum;
 import chess.pieces.Piece;
 import chess.pieces.PiecesTypeEnum;
+/**
+ *Clss that models the Queen piece
+ *@date:18/nov/19
+ */
 
 public class Queen extends Piece{
 
