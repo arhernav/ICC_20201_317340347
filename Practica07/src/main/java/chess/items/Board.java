@@ -26,8 +26,8 @@ public class Board{
                 this.matrix[i][j] = new Empty(new Position(i, j), ColorEnum.NONE);
             }
         }
-        this.matrix[4][0] = new Rook(new Position(4, 0), ColorEnum.BLACK);
-        this.matrix[7][0] = new Rook(new Position(7, 0), ColorEnum.BLACK);
+        this.matrix[0][0] = new Rook(new Position(0, 0), ColorEnum.BLACK);
+        this.matrix[0][7] = new Rook(new Position(0, 7), ColorEnum.BLACK);
 	this.matrix[4][4] = new Queen(new Position(4, 4), ColorEnum.BLACK);
     }
 
