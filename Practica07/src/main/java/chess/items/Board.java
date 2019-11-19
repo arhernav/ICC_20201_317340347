@@ -6,6 +6,7 @@ import chess.pieces.chessPieces.Rook;
 import chess.pieces.chessPieces.Queen;
 import chess.pieces.chessPieces.Bishop;
 import chess.pieces.chessPieces.Pawn;
+import chess.pieces.chessPieces.King;
 
 /**
  *Class that models a chess board
@@ -32,6 +33,7 @@ public class Board{
         this.matrix[0][0] = new Rook(new Position(0, 0), ColorEnum.BLACK);
 	this.matrix[2][0] = new Bishop(new Position(2, 0), ColorEnum.BLACK);
 	this.matrix[4][0] = new Queen(new Position(4, 0), ColorEnum.BLACK);
+	this.matrix[3][0] = new King(new Position(3, 0), ColorEnum.BLACK);
 	this.matrix[5][0] = new Bishop(new Position(5, 0), ColorEnum.BLACK);
         this.matrix[7][0] = new Rook(new Position(7, 0), ColorEnum.BLACK);
 	this.matrix[0][1] = new Pawn(new Position(0, 1), ColorEnum.WHITE);
