@@ -30,9 +30,9 @@ public class ChessGUI extends PApplet{
     @Override
     public void setup(){
         System.out.println(board.toString());
-	Piece q = board.getPiece(new Position(4, 4));
+	Piece q = board.getPiece(new Position(5, 5));
 	for(int i = 0; i<q.getLegalMoves().size(); i++){
-	    System.out.println(q.getLegalMoves().get(2));
+	    System.out.println(q.getLegalMoves().get(i).toString());
 	    }
         black_rook = loadImage(getClass().getResource("/black-rook-50.png").getPath());
         white_rook = loadImage(getClass().getResource("/white-rook-50.png").getPath());

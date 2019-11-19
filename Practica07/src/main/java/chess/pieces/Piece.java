@@ -26,7 +26,10 @@ public abstract class Piece{
         this.color = color;
     }
 
-    
+    /**
+     *Method used to know if a piece can eat a diferent piece in a certain position
+     *@return:returns -1 if both pieces are the same color, returns 0 if both pieces are of a different color and returns 1 if there is no other pece
+     */
     public int isAppendable(Position p){
         Board board = Board.getInstance();
         Piece piece = board.getPiece(p);

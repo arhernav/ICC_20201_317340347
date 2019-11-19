@@ -16,7 +16,7 @@ public class Rook extends Piece {
     /**
      *Class builder
      *@param:p Objct of te class postion
-     *@param: color Constant from PiecesTypeEnum
+     *@param:color Constant from PiecesTypeEnum
      */
     public Rook(Position p, ColorEnum color) {
         super(p,color);
