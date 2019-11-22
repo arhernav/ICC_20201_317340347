@@ -1,2 +1,5 @@
 INSTRUCCIONES PARA COMPILAR Y EJECUTAR
-En el directorio "Ajedrez" abrir una terminal y usar el comando gradle run
+usar 
+en la carpeta donde esté el archivo gradlew
+
+sudo ./gradlew run

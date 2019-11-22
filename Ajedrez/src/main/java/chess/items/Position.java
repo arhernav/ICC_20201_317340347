@@ -1,21 +1,8 @@
 package chess.items;
-
-/**
- *Class used to manage the position of a piece
- *@author:Lab ICC 2020-1
- *@date:16/Nov/2019
- */
-
 public class Position{
-    //Parameters
     private int x;
     private int y;
 
-    /**
-     *Class builder
-     *@param: x Int that specifies the file of the pice
-     *@param: y Int that specifies the column of the pieceo 
-     */
     public Position(int x, int y){
         this.x = x;
         this.y = y;
@@ -28,6 +15,9 @@ public class Position{
         return x;
     }
 
+    public boolean isLegal(){
+        return (this.x < 8 && this.x > -1 && this.y < 8 && this.y > -1 )? true: false;
+    }
     /**
      * @return the y
      */
@@ -35,10 +25,6 @@ public class Position{
         return y;
     }
 
-    /**
-     *Method that compares two objects
-     *@param:Any object
-     */
     @Override
     public boolean equals(Object obj) {
         if(!(obj instanceof Position))return false;
@@ -46,18 +32,10 @@ public class Position{
         return (p.getX()==this.getX() && p.getY()== this.getY())? true: false;
     }
 
-    /**
-     *Gives the position converted to String
-     */
     @Override
     public String toString() {
         return "  ||x:"+this.getX()+" y:"+this.getY()+"||";
     }
-
-    /**
-     *Method that returns false if the position is out of board,true in other case
-     *@param:int Determies the board size
-     */
     public boolean isOutOfBoard(int board_size){
         if(this.y >= board_size)return false;
         if(this.x >= board_size)return false;

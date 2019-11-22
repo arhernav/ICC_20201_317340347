@@ -1,6 +1,8 @@
 package chess.pieces.chessPieces;
+
 import java.util.LinkedList;
 import java.util.List;
+
 import chess.items.Board;
 import chess.items.Position;
 import chess.pieces.ColorEnum;

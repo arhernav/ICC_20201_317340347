@@ -29,41 +29,28 @@ public class King extends Piece{
     @Override
     public List<Position> getLegalMoves() {
         Board board = Board.getInstance();
-        if (this.legalMoves == null) {
-            this.legalMoves = new LinkedList<Position>();
+	this.legalMoves = new LinkedList<Position>();
+	
+	//King movements
+	Position nextLegalMove0 = new Position(this.position.getX()+1, this.position.getY()-1);
+	Position nextLegalMove1 = new Position(this.position.getX()+1, this.position.getY());
+	Position nextLegalMove2 = new Position(this.position.getX()+1, this.position.getY()+1);
+	Position nextLegalMove3 = new Position(this.position.getX(), this.position.getY()+1);
+	Position nextLegalMove4 = new Position(this.position.getX(), this.position.getY()-1);
+	Position nextLegalMove5 = new Position(this.position.getX()-1, this.position.getY()-1);
+	Position nextLegalMove6 = new Position(this.position.getX()-1, this.position.getY());
+	Position nextLegalMove7 = new Position(this.position.getX()-1, this.position.getY()+1);
+	
 
-	    //King movements
-	    Position nextLegalMove0 = new Position(this.position.getX()+1, this.position.getY()-1);
-	    Position nextLegalMove1 = new Position(this.position.getX()+1, this.position.getY());
-	    Position nextLegalMove2 = new Position(this.position.getX()+1, this.position.getY()+1);
-	    Position nextLegalMove3 = new Position(this.position.getX(), this.position.getY()+1);
-	    Position nextLegalMove4 = new Position(this.position.getX(), this.position.getY()-1);
-	    Position nextLegalMove5 = new Position(this.position.getX()-1, this.position.getY()-1);
-	    Position nextLegalMove6 = new Position(this.position.getX()-1, this.position.getY());
-	    Position nextLegalMove7 = new Position(this.position.getX()-1, this.position.getY()+1);
-
-	    Position[] movements = new Position[8];
-	    movements[0] = nextLegalMove0;
-	    movements[1] = nextLegalMove1;
-	    movements[2] = nextLegalMove2;
-	    movements[3] = nextLegalMove3;
-	    movements[4] = nextLegalMove4;
-	    movements[5] = nextLegalMove5;
-	    movements[6] = nextLegalMove6;
-	    movements[7] = nextLegalMove7;
-	    
-	    //Adding the posible positions to the list
-	    for(int i = 0; i<8; i++){
-		if(!(movements[i].isOutOfBoard(8))){
-		    if (this.isAppendable(movements[i]) == -1)break;
-		    if (this.isAppendable(movements[i]) == 0){
-			this.legalMoves.add(movements[i]);
-			break;
-		    }
-		    legalMoves.add(movements[i]);   
-		}
-	    }   
-	}
+	if(nextLegalMove0.isOutOfBoard(8) && (this.isAppendable(nextLegalMove0) == 0 || this.isAppendable(nextLegalMove0) == 1 )) this.legalMoves.add(nextLegalMove0);
+	if(nextLegalMove1.isOutOfBoard(8) && (this.isAppendable(nextLegalMove1) == 0 || this.isAppendable(nextLegalMove1) == 1 )) this.legalMoves.add(nextLegalMove1);
+	if(nextLegalMove2.isOutOfBoard(8) && (this.isAppendable(nextLegalMove2) == 0 || this.isAppendable(nextLegalMove2) == 1 )) this.legalMoves.add(nextLegalMove2);
+	if(nextLegalMove3.isOutOfBoard(8) && (this.isAppendable(nextLegalMove3) == 0 || this.isAppendable(nextLegalMove3) == 1 )) this.legalMoves.add(nextLegalMove3);
+	if(nextLegalMove4.isOutOfBoard(8) && (this.isAppendable(nextLegalMove4) == 0 || this.isAppendable(nextLegalMove4) == 1 )) this.legalMoves.add(nextLegalMove4);
+	if(nextLegalMove5.isOutOfBoard(8) && (this.isAppendable(nextLegalMove5) == 0 || this.isAppendable(nextLegalMove5) == 1 )) this.legalMoves.add(nextLegalMove5);
+	if(nextLegalMove6.isOutOfBoard(8) && (this.isAppendable(nextLegalMove6) == 0 || this.isAppendable(nextLegalMove6) == 1 )) this.legalMoves.add(nextLegalMove6);
+	if(nextLegalMove7.isOutOfBoard(8) && (this.isAppendable(nextLegalMove7) == 0 || this.isAppendable(nextLegalMove7) == 1 )) this.legalMoves.add(nextLegalMove7);
+	
 	return this.legalMoves;
     }
 

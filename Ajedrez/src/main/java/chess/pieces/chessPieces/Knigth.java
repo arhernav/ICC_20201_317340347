@@ -31,68 +31,26 @@ public class Knigth extends Piece{
     @Override
     public List<Position> getLegalMoves() {
         Board board = Board.getInstance();
-        if (this.legalMoves == null) {
-            this.legalMoves = new LinkedList<Position>();
+	this.legalMoves = new LinkedList<Position>();
+	
+	//Posible movements
+	Position nextLegalPosition0 = new Position(this.position.getX()+2, this.position.getY()-1);
+	Position nextLegalPosition1 = new Position(this.position.getX()+2, this.position.getY()+1);
+	Position nextLegalPosition2 = new Position(this.position.getX()+1, this.position.getY()+2);
+	Position nextLegalPosition3 = new Position(this.position.getX()-1, this.position.getY()+2);
+	Position nextLegalPosition4 = new Position(this.position.getX()-2, this.position.getY()+1);
+	Position nextLegalPosition5 = new Position(this.position.getX()-2, this.position.getY()-1);
+	Position nextLegalPosition6 = new Position(this.position.getX()-1, this.position.getY()-2);
+	Position nextLegalPosition7 = new Position(this.position.getX()+1, this.position.getY()-2);
 
-	    //Posible movements
-	    Position nextLegalPosition0 = new Position(this.position.getX()+2, this.position.getY()-1);
-	    Position nextLegalPosition1 = new Position(this.position.getX()+2, this.position.getY()+1);
-	    Position nextLegalPosition2 = new Position(this.position.getX()+1, this.position.getY()+2);
-	    Position nextLegalPosition3 = new Position(this.position.getX()-1, this.position.getY()+2);
-	    Position nextLegalPosition4 = new Position(this.position.getX()-2, this.position.getY()+1);
-	    Position nextLegalPosition5 = new Position(this.position.getX()-2, this.position.getY()-1);
-	    Position nextLegalPosition6 = new Position(this.position.getX()-1, this.position.getY()-2);
-	    Position nextLegalPosition7 = new Position(this.position.getX()+1, this.position.getY()-2);
-
-	    //Position0
-	    if(!(nextLegalPosition0.isOutOfBoard(8))){
-		if(this.isAppendable(nextLegalPosition0) == 1 || this.isAppendable(nextLegalPosition0) == 0){
-		    legalMoves.add(nextLegalPosition0);
-		}
-	    }
-	    //Position1
-	    if(!(nextLegalPosition1.isOutOfBoard(8))){
-		if(this.isAppendable(nextLegalPosition1) == 1 || this.isAppendable(nextLegalPosition1) == 0){
-		    legalMoves.add(nextLegalPosition1);
-		}
-	    }
-	    //Position2
-	    if(!(nextLegalPosition2.isOutOfBoard(8))){
-		if(this.isAppendable(nextLegalPosition2) == 1 || this.isAppendable(nextLegalPosition2) == 0){
-		    legalMoves.add(nextLegalPosition2);
-		}
-	    }
-	    //Position3
-	    if(!(nextLegalPosition3.isOutOfBoard(8))){
-		if(this.isAppendable(nextLegalPosition3) == 1 || this.isAppendable(nextLegalPosition3) == 0){
-		    legalMoves.add(nextLegalPosition3);
-		}
-	    }
-	    //Position4
-	    if(!(nextLegalPosition4.isOutOfBoard(8))){
-		if(this.isAppendable(nextLegalPosition4) == 1 || this.isAppendable(nextLegalPosition4) == 0){
-		    legalMoves.add(nextLegalPosition4);
-		}
-	    }
-	    //Position5
-	    if(!(nextLegalPosition5.isOutOfBoard(8))){
-		if(this.isAppendable(nextLegalPosition5) == 1 || this.isAppendable(nextLegalPosition5) == 0){
-		    legalMoves.add(nextLegalPosition5);
-		}
-	    }
-	    //Position6
-	    if(!(nextLegalPosition6.isOutOfBoard(8))){
-		if(this.isAppendable(nextLegalPosition6) == 1 || this.isAppendable(nextLegalPosition6) == 0){
-		    legalMoves.add(nextLegalPosition6);
-		}
-	    }
-	    //Position7
-	    if(!(nextLegalPosition7.isOutOfBoard(8))){
-		if(this.isAppendable(nextLegalPosition7) == 1 || this.isAppendable(nextLegalPosition7) == 0){
-		    legalMoves.add(nextLegalPosition7);
-		}
-	    }
-	}
+	if(nextLegalPosition0.isOutOfBoard(8) && (this.isAppendable(nextLegalPosition0)==0 || this.isAppendable(nextLegalPosition0)==1 ))this.legalMoves.add(nextLegalPosition0);
+	if(nextLegalPosition1.isOutOfBoard(8) && (this.isAppendable(nextLegalPosition1)==0 || this.isAppendable(nextLegalPosition1)==1 ))this.legalMoves.add(nextLegalPosition1);
+	if(nextLegalPosition2.isOutOfBoard(8) && (this.isAppendable(nextLegalPosition2)==0 || this.isAppendable(nextLegalPosition2)==1 ))this.legalMoves.add(nextLegalPosition2);
+	if(nextLegalPosition3.isOutOfBoard(8) && (this.isAppendable(nextLegalPosition3)==0 || this.isAppendable(nextLegalPosition3)==1 ))this.legalMoves.add(nextLegalPosition3);
+	if(nextLegalPosition4.isOutOfBoard(8) && (this.isAppendable(nextLegalPosition4)==0 || this.isAppendable(nextLegalPosition4)==1 ))this.legalMoves.add(nextLegalPosition4);
+	if(nextLegalPosition5.isOutOfBoard(8) && (this.isAppendable(nextLegalPosition5)==0 || this.isAppendable(nextLegalPosition5)==1 ))this.legalMoves.add(nextLegalPosition5);
+	if(nextLegalPosition6.isOutOfBoard(8) && (this.isAppendable(nextLegalPosition6)==0 || this.isAppendable(nextLegalPosition6)==1 ))this.legalMoves.add(nextLegalPosition6);
+	if(nextLegalPosition7.isOutOfBoard(8) && (this.isAppendable(nextLegalPosition7)==0 || this.isAppendable(nextLegalPosition7)==1 ))this.legalMoves.add(nextLegalPosition7);
 	return this.legalMoves;
     }
 

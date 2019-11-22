@@ -29,27 +29,25 @@ public class Pawn extends Piece{
     public List<Position> getLegalMoves() {
         Board board = Board.getInstance();
 	this.legalMoves = new LinkedList<Position>();
+
 	switch(this.getColor()){
 	case WHITE:
 	    Position nextLegalMoveW = new Position(this.position.getX(), this.position.getY()-1);
-	    Position nextEatW1 = new Position(this.position.getX()+1, this.position.getY()-1);
-	    Position nextEatW2 = new Position(this.position.getX()-1, this.position.getY()-1);
-	    if(nextEatW1.isOutOfBoard(8) && this.isAppendable(nextEatW1)== 0) this.legalMoves.add(nextEatW1);
-	    if(nextEatW2.isOutOfBoard(8) && this.isAppendable(nextEatW2)== 0) this.legalMoves.add(nextEatW2);
-	    if(nextLegalMoveW.isOutOfBoard(8) &&  this.isAppendable(nextLegalMoveW) == 1) this.legalMoves.add(nextLegalMoveW);
+	    if(this.isAppendable(nextLegalMoveW) == 1 && nextLegalMoveW.isOutOfBoard(8) == false){
+		this.legalMoves.add(nextLegalMoveW);
+	    }
 	    break;
 	case BLACK:
 	    Position nextLegalMoveB = new Position(this.position.getX(), this.position.getY()+1);
-	    Position nextEatB1 = new Position(this.position.getX()+1, this.position.getY()+1);
-	    Position nextEatB2 = new Position(this.position.getX()-1, this.position.getY()+1);
-	    if(nextEatB1.isOutOfBoard(8) && this.isAppendable(nextEatB1)== 0) this.legalMoves.add(nextEatB1);
-	    if(nextEatB2.isOutOfBoard(8) && this.isAppendable(nextEatB2)== 0) this.legalMoves.add(nextEatB2);
-	    if(nextLegalMoveB.isOutOfBoard(8) &&  this.isAppendable(nextLegalMoveB) == 1) this.legalMoves.add(nextLegalMoveB);
+	    if(this.isAppendable(nextLegalMoveB) == 1 && nextLegalMoveB.isOutOfBoard(8) == false){
+		this.legalMoves.add(nextLegalMoveB);
+	    }
 	    break;
 	default:
 	    break;
+
+	    		
 	}
-	
 	return this.legalMoves;
     }
 

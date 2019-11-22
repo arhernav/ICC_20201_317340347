@@ -1,7 +1,25 @@
-apply plugin: 'java'
-apply plugin:'application'
+plugins {
+    id 'java'
+    id 'application'
+}
+
 mainClassName = "gui.ChessGUI"
+
 dependencies {
     // Dependency on local binaries
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+jar {
+    manifest {
+        attributes "Main-Class": mainClassName
+    }
+ 
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+
+
+
