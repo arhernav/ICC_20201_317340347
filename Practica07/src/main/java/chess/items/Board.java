@@ -6,6 +6,8 @@ import chess.pieces.chessPieces.Rook;
 import chess.pieces.chessPieces.Queen;
 import chess.pieces.chessPieces.Bishop;
 import chess.pieces.chessPieces.Pawn;
+import chess.pieces.chessPieces.Knigth;
+import chess.pieces.chessPieces.King;
 
 public class Board{
     public int SIZE = 8;
@@ -18,10 +20,12 @@ public class Board{
                 this.matrix[i][j] = new Empty(new Position(i, j), ColorEnum.NONE);
             }
         }
-        this.matrix[4][0] = new Rook(new Position(4, 0), ColorEnum.WHITE);
-        this.matrix[7][0] = new Rook(new Position(7, 0), ColorEnum.BLACK);
-	this.matrix[2][2] = new Pawn(new Position(2, 2), ColorEnum.WHITE);
-        this.matrix[2][6] = new Pawn(new Position(2, 6), ColorEnum.BLACK);
+        this.matrix[7][0] = new Rook(new Position(7, 0), ColorEnum.WHITE);
+        this.matrix[4][0] = new Rook(new Position(4, 0), ColorEnum.BLACK);
+	this.matrix[2][6] = new Pawn(new Position(2, 6), ColorEnum.WHITE);
+        this.matrix[2][1] = new Pawn(new Position(2, 1), ColorEnum.BLACK);
+	this.matrix[4][4] = new Knigth(new Position(4, 4), ColorEnum.BLACK);
+	this.matrix[3][3] = new King(new Position(3, 3), ColorEnum.BLACK);
 	
     }
 

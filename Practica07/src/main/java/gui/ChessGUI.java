@@ -25,6 +25,11 @@ public class ChessGUI extends PApplet {
     PImage black_bishop;
     PImage white_pawn;
     PImage black_pawn;
+    PImage white_knigth;
+    PImage black_knigth;
+    PImage white_king;
+    PImage black_king;
+    
     
     public static void main(String[] args) {
         PApplet.main("gui.ChessGUI");
@@ -47,6 +52,10 @@ public class ChessGUI extends PApplet {
         white_bishop = loadImage(getClass().getResource("/white-bishop-50.png").getPath());
 	black_pawn = loadImage(getClass().getResource("/black-pawn-50.png").getPath());
         white_pawn = loadImage(getClass().getResource("/white-pawn-50.png").getPath());
+	black_knigth = loadImage(getClass().getResource("/black-knight-50.png").getPath());
+        white_knigth = loadImage(getClass().getResource("/white-knight-50.png").getPath());
+	black_king = loadImage(getClass().getResource("/black-king-50.png").getPath());
+        white_king = loadImage(getClass().getResource("/white-king-50.png").getPath());
     }
 
     @Override
@@ -123,6 +132,18 @@ public class ChessGUI extends PApplet {
                 image(white_pawn, x * PIXEL_SIZE, y * PIXEL_SIZE);
             if (p.getColor().equals(ColorEnum.BLACK))
                 image(black_pawn, x * PIXEL_SIZE, y * PIXEL_SIZE);
+            break;
+	case KNIGTH:
+            if (p.getColor().equals(ColorEnum.WHITE))
+                image(white_knigth, x * PIXEL_SIZE, y * PIXEL_SIZE);
+            if (p.getColor().equals(ColorEnum.BLACK))
+                image(black_knigth, x * PIXEL_SIZE, y * PIXEL_SIZE);
+            break;
+	case KING:
+            if (p.getColor().equals(ColorEnum.WHITE))
+                image(white_king, x * PIXEL_SIZE, y * PIXEL_SIZE);
+            if (p.getColor().equals(ColorEnum.BLACK))
+                image(black_king, x * PIXEL_SIZE, y * PIXEL_SIZE);
             break;
         case EMPTY:
             break;
