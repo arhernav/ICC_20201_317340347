@@ -6,7 +6,15 @@ import chess.items.Position;
 import chess.pieces.ColorEnum;
 import chess.pieces.Piece;
 import chess.pieces.PiecesTypeEnum;
+
+/**
+ *Class used to manage the empty places of the board
+ */
 public class Empty extends Piece{
+
+    /**
+     *Class builder
+     */
     public Empty(Position p, ColorEnum c){
         super(p,c);
         this.type = PiecesTypeEnum.EMPTY;

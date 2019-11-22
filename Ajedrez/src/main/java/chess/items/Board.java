@@ -9,10 +9,16 @@ import chess.pieces.chessPieces.Pawn;
 import chess.pieces.chessPieces.Knigth;
 import chess.pieces.chessPieces.King;
 
+/**
+ *Class that models the board of the game
+ */
 public class Board{
     public int SIZE = 8;
     public Piece[][] matrix;
     private static Board instance = null;
+    /**
+     *Class builder
+     */
     private Board(){
         this.matrix = new Piece[SIZE][SIZE];
         for (int i = 0; i < SIZE; i++) {
@@ -59,16 +65,29 @@ public class Board{
 	
     }
 
+    /**
+     *Method that gives you the existing instance of the board. If there's no created instance, the method creates a new one
+     *@return:Returns the existing instanceofthe board or a new board if there isno previous instance
+     */
     public static Board getInstance(){
         if(instance == null)
             instance = new Board();
         return instance;
     }
 
+    /**
+     *Returns the sizeof the board
+     *@return: Int that gives you the size of the board
+     */
     public int getSize(){
         return this.SIZE;
     }
 
+    /**
+     *Method that moves a piece to a certain position
+     *@param:p The actual position of the piece
+     *@param:q The new position of the piece
+     */
     public void move(Position p, Position q){
         if(!p.isLegal() || !q.isLegal())return;
         Piece piece = this.getPiece(p);
@@ -77,12 +96,19 @@ public class Board{
         this.matrix[p.getX()][p.getY()] = new Empty(p,ColorEnum.NONE);
         this.matrix[q.getX()][q.getY()] = piece; 
     }
+
+    /**
+     *Returns a piece from a certain position on the board
+     */
     public Piece getPiece(Position p){
         //if(p.isOutOfBoard(SIZE))return null;
         return this.matrix[p.getX()][p.getY()];
     }
 
 
+    /**
+     *Returns the board converted to String
+     */
     public String toString(){
         String result = "";
         for (int i = 0; i < SIZE; i++) {

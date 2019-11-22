@@ -8,13 +8,24 @@ import chess.items.Position;
 import chess.pieces.ColorEnum;
 import chess.pieces.Piece;
 import chess.pieces.PiecesTypeEnum;
+/**
+ *Class that models the rook piece
+ */
 
 public class Rook extends Piece {
+
+    /**
+     *Class builder
+     */
     public Rook(Position p, ColorEnum color) {
         super(p, color);
         this.type = PiecesTypeEnum.ROOK;
     }
 
+    /**
+     *Method that returns a list with the posible movements of the piece
+     *@return:Returns a list with the legal moves of the piece
+     */
     public List<Position> getLegalMoves() {
         Board board = Board.getInstance();
         this.legalMoves = new LinkedList<Position>();

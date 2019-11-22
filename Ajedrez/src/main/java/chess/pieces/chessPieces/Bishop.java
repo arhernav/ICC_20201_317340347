@@ -23,6 +23,10 @@ public class Bishop extends Piece{
 	this.type = PiecesTypeEnum.BISHOP;
     }
 
+    /**
+     *Returns a list with the posible movements that the piece can make
+     *@return:Returns a list with the legal moves of the piece
+     */
     @Override
     public List<Position> getLegalMoves(){
 	Board board = Board.getInstance();
@@ -82,6 +86,10 @@ public class Bishop extends Piece{
     }
     
 
+    /**
+     *Compares two objects to see if they are the same
+     *@return:True if both objects are the same. False in any other case
+     */
     @Override
     public boolean equals(Object obj){
 	if (!(obj instanceof Bishop)) return false;

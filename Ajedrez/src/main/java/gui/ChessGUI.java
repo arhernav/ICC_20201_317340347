@@ -10,6 +10,11 @@ import chess.pieces.Piece;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ *Grafic interface of the game
+ *@author: Lab ICC 2020-1
+ */
+
 public class ChessGUI extends PApplet {
     Position selected = null;
     ColorEnum turn = ColorEnum.WHITE;
